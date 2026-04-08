@@ -3,88 +3,425 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arabic Minute — Support</title>
+  <title>Arabic Minute - App Support</title>
+  <meta name="description" content="Arabic Minute app support page. Learn Arabic vocabulary one word at a time with 1,200+ curated words across 4 difficulty levels.">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #0f1a1a; color: #e5e5e5; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
-    .header { text-align: center; padding: 60px 20px 30px; }
-    h1 { font-size: 28px; color: #fff; margin-bottom: 6px; }
-    .subtitle { color: #999; font-size: 15px; }
-    .content { max-width: 600px; width: 100%; padding: 20px; }
-    .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; margin-bottom: 16px; }
-    .card h2 { font-size: 18px; color: #fff; margin-bottom: 12px; }
-    .card p, .card li { font-size: 14px; line-height: 1.7; color: #bbb; }
-    .card ul { padding-left: 20px; }
-    .card a { color: #2dd4bf; text-decoration: none; }
-    .card a:hover { text-decoration: underline; }
-    .badge { display: inline-block; background: #0d9488; color: #fff; font-size: 12px; padding: 4px 10px; border-radius: 20px; margin-top: 8px; }
-    .nav { display: flex; gap: 12px; margin-top: 8px; }
-    .nav a { color: #2dd4bf; font-size: 14px; }
-    .faq-q { font-weight: 600; color: #fff; margin-bottom: 4px; font-size: 14px; }
-    .faq-a { color: #bbb; font-size: 14px; margin-bottom: 14px; line-height: 1.6; }
-    footer { padding: 40px 20px; color: #555; font-size: 13px; text-align: center; }
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-border: #334155;
+      --text: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --accent: #2dd4bf;
+      --accent-hover: #5eead4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .hero {
+      text-align: center;
+      padding: 64px 24px 40px;
+    }
+
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #0d9488, #2dd4bf);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 36px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero .tagline {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .badges {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(13, 148, 136, 0.2);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(45, 212, 191, 0.2);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
+      letter-spacing: -0.3px;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .card li {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+      color: var(--accent-hover);
+    }
+
+    /* Features grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .feature-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .feature-item strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--surface-border);
+      padding: 16px 0;
+    }
+
+    .faq-item:first-child {
+      padding-top: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #fff;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .faq-a {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Support CTA */
+    .support-cta {
+      text-align: center;
+      padding: 24px;
+    }
+
+    .support-cta .email-link {
+      display: inline-block;
+      background: rgba(13, 148, 136, 0.15);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .support-cta .email-link:hover {
+      background: rgba(13, 148, 136, 0.25);
+      text-decoration: none;
+    }
+
+    .support-cta .response-time {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: #475569;
+      font-size: 13px;
+      border-top: 1px solid var(--surface-border);
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #64748b;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .hero {
+        padding: 48px 16px 32px;
+      }
+
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="header">
+  <div class="hero">
+    <div class="app-icon" role="img" aria-label="Arabic Minute app icon">&#1576;</div>
     <h1>Arabic Minute</h1>
-    <p class="subtitle">Learn Arabic vocabulary daily — one word at a time</p>
-    <span class="badge">Offline Arabic Learning</span>
-    <div class="nav">
+    <p class="tagline">Learn Arabic vocabulary one word at a time with 1,200+ curated words across 4 difficulty levels</p>
+    <div class="badges">
+      <span class="badge">100% Offline</span>
+      <span class="badge">No Account Required</span>
+      <span class="badge">No Data Collected</span>
+    </div>
+    <div class="nav-links">
+      <a href="#support">Support</a>
+      <a href="#faq">FAQ</a>
       <a href="privacy.html">Privacy Policy</a>
     </div>
   </div>
 
-  <div class="content">
+  <div class="container">
+
     <div class="card">
-      <h2>About</h2>
-      <p>Arabic Minute helps you build Arabic vocabulary through daily practice. The app features daily word cards with transliteration and pronunciation, vocabulary quizzes, root exploration, grammar lessons, dialect comparison, calligraphy wallpapers, and more. The entire app works fully offline with no account required.</p>
+      <h2>About the App</h2>
+      <p>Arabic Minute is a focused, distraction-free Arabic vocabulary learning app designed for daily practice. Each day you receive a new Arabic word complete with transliteration, English meaning, and contextual usage. The app includes 1,200+ carefully curated vocabulary words organized across four difficulty levels, from absolute beginner to advanced.</p>
+      <p style="margin-top: 12px;">The entire app works offline with no account or internet connection required. All vocabulary data, quizzes, and features are bundled directly within the app.</p>
     </div>
 
     <div class="card">
       <h2>Features</h2>
-      <ul>
-        <li>Daily Arabic word with transliteration and meaning</li>
-        <li>Text-to-speech pronunciation</li>
-        <li>Vocabulary quizzes with multiple modes</li>
-        <li>Arabic root explorer</li>
-        <li>Grammar lessons and verb conjugation</li>
-        <li>Dialect explorer (MSA, Egyptian, Levantine, Gulf, Maghrebi)</li>
-        <li>Arabic letter guide</li>
-        <li>Sentence builder exercises</li>
-        <li>Listening practice</li>
-        <li>Calligraphy wallpaper generator</li>
-        <li>Daily challenges and achievements</li>
-        <li>Favorites and progress tracking</li>
-        <li>Works entirely offline</li>
-      </ul>
+      <div class="features-grid">
+        <div class="feature-item">
+          <strong>Daily Word Cards</strong>
+          Arabic word with transliteration and meaning
+        </div>
+        <div class="feature-item">
+          <strong>Pronunciation</strong>
+          Text-to-speech for every word
+        </div>
+        <div class="feature-item">
+          <strong>Vocabulary Quizzes</strong>
+          Test your knowledge with multiple quiz modes
+        </div>
+        <div class="feature-item">
+          <strong>Root Explorer</strong>
+          Discover Arabic word roots and derivations
+        </div>
+        <div class="feature-item">
+          <strong>Letter Guide</strong>
+          Learn the Arabic alphabet with forms and sounds
+        </div>
+        <div class="feature-item">
+          <strong>Grammar Lessons</strong>
+          Verb conjugation and sentence patterns
+        </div>
+        <div class="feature-item">
+          <strong>Dialect Explorer</strong>
+          Compare MSA, Egyptian, Levantine, Gulf, and Maghrebi
+        </div>
+        <div class="feature-item">
+          <strong>Progress Tracking</strong>
+          Daily streaks, XP, and achievements
+        </div>
+        <div class="feature-item">
+          <strong>Favorites</strong>
+          Save and review your favorite words
+        </div>
+        <div class="feature-item">
+          <strong>Calligraphy Wallpapers</strong>
+          Generate beautiful Arabic wallpapers
+        </div>
+        <div class="feature-item">
+          <strong>4 Difficulty Levels</strong>
+          Beginner through advanced vocabulary
+        </div>
+        <div class="feature-item">
+          <strong>Fully Offline</strong>
+          No internet connection needed
+        </div>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="faq">
       <h2>Frequently Asked Questions</h2>
-      <p class="faq-q">Does the app require an internet connection?</p>
-      <p class="faq-a">No. Arabic Minute works entirely offline. All vocabulary, grammar, and lesson data is bundled with the app.</p>
 
-      <p class="faq-q">How do I reset my progress?</p>
-      <p class="faq-a">Go to the Settings page within the app. You can reset your streak, learned words, and favorites from there.</p>
+      <div class="faq-item">
+        <p class="faq-q">Does the app require an internet connection?</p>
+        <p class="faq-a">No. Arabic Minute works entirely offline. All 1,200+ vocabulary words, grammar lessons, and quiz data are bundled within the app. You can learn anywhere without Wi-Fi or cellular data.</p>
+      </div>
 
-      <p class="faq-q">What Arabic levels are supported?</p>
-      <p class="faq-a">The app includes vocabulary across beginner, intermediate, and advanced levels covering everyday conversation, travel, and academic Arabic.</p>
+      <div class="faq-item">
+        <p class="faq-q">Does the app collect any personal data?</p>
+        <p class="faq-a">No. Arabic Minute does not collect, transmit, or store any personal data. All your progress, favorites, and settings are stored locally on your device only. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
+      </div>
 
-      <p class="faq-q">How does the daily word feature work?</p>
-      <p class="faq-a">Each day a new Arabic word is presented with its transliteration, English meaning, and example usage. Your progress is tracked with a daily streak counter.</p>
+      <div class="faq-item">
+        <p class="faq-q">Do I need to create an account?</p>
+        <p class="faq-a">No. The app requires no sign-up, login, or account of any kind. Simply download and start learning.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">What Arabic levels are supported?</p>
+        <p class="faq-a">The app includes four difficulty levels: Beginner, Elementary, Intermediate, and Advanced. Words are drawn from everyday conversation, travel, academic, and professional contexts.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How does the daily word feature work?</p>
+        <p class="faq-a">Each day a new Arabic word is presented with its Arabic script, transliteration, English meaning, and usage context. Your progress is tracked with a daily streak counter and XP system to keep you motivated.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How do I reset my progress?</p>
+        <p class="faq-a">Go to the Settings page within the app. You can reset your learning streak, learned words, quiz scores, and favorites from there.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How does pronunciation work?</p>
+        <p class="faq-a">The app uses your device's built-in text-to-speech engine to pronounce Arabic words. No internet connection is required for pronunciation.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Is the app available in languages other than English?</p>
+        <p class="faq-a">Currently, the app interface and word translations are in English. The vocabulary content is in Modern Standard Arabic (MSA), with dialect comparisons available in the Dialect Explorer feature.</p>
+      </div>
+    </div>
+
+    <div class="card" id="support">
+      <h2>Contact Support</h2>
+      <p>If you have questions, need help with the app, found a bug, or have a feature request, we are happy to help. Please reach out to us and we will get back to you as soon as possible.</p>
+      <div class="support-cta">
+        <a href="mailto:abdulla.saeed.alhemeiri@gmail.com" class="email-link">abdulla.saeed.alhemeiri@gmail.com</a>
+        <p class="response-time">We typically respond within 24-48 hours.</p>
+      </div>
     </div>
 
     <div class="card">
-      <h2>Support</h2>
-      <p>If you have questions, feedback, or need help with the app, please contact us at:</p>
-      <p style="margin-top: 8px;"><a href="mailto:abdulla.saeed.alhemeiri@gmail.com">abdulla.saeed.alhemeiri@gmail.com</a></p>
-      <p style="margin-top: 12px; font-size: 13px; color: #888;">We typically respond within 48 hours.</p>
+      <h2>Privacy</h2>
+      <p>Arabic Minute respects your privacy. The app works entirely offline, collects no personal data, uses no analytics or tracking, and requires no account or login. All learning progress is stored locally on your device.</p>
+      <p style="margin-top: 10px;">Read our full <a href="privacy.html">Privacy Policy</a> for more information.</p>
     </div>
+
   </div>
 
   <footer>
-    © 2026 Abdulla Alhemeiri. All rights reserved.
+    <p>&copy; 2025 Abdulla Alhemeiri. All rights reserved.</p>
+    <p style="margin-top: 8px;"><a href="privacy.html">Privacy Policy</a></p>
   </footer>
 </body>
 </html>
